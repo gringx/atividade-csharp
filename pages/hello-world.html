@@ -5,32 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprenda mais sobre C#</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     
-    <header> <h1>Como aprender: C#</h1></header>
+    <header>
+                                      
+        <h1>Como aprender: C# <span id="helloworld-nome-usuario-logado"></span></h1></header>
 
     <main>  
         <h2>Como fazer um "Hello World"</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p class= "txtwor">O programa "Hello World" começa com uma diretiva using que faz referência ao namespace System.
+             Namespaces fornecem um meio hierárquico de organizar bibliotecas e programas em C#. Os namespaces 
+             contêm tipos e outros namespaces.  
 
-        <img src="../img/csharpHelloWorld.png" alt="csharpHelloWorld">
+            A diretiva using que faz referência a um determinado namespace permite o uso não qualificado 
+            dos tipos que são membros desse namespace. Devido à diretiva using, o programa pode usar Console.WriteLine como um atalho para System.Console.WriteLine. 
+            
+            A classe Program declarada pelo programa "Hello World" tem um único membro, o método 
+            chamado Main. O Main método é declarado com o static modificador .  Por convenção,
+             um método estático chamado Main serve como o ponto de entrada de um programa C#. 
+            
+            A saída do programa é produzida pelo método WriteLine da classe Console no namespace System.
+             Essa classe é fornecida pelas bibliotecas de classe padrão, que, por padrão, são referenciadas
+              automaticamente pelo compilador. </p>
+
+       
     </main>
-
+ <img class="imgwor" src="../img/csharpHelloWorld.png" alt="csharpHelloWorld">
     <nav>
         
-        <a href="variaveis.html">Variáveis no C#</a>
+        <a class="varvolta" href="variaveis.html">Variáveis no C#</a>
 
     </nav>
 
-    <footer>
-        <p>Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
+    <footer class="footerwor">
+        <p class="bar">Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
     </footer>
-    
+    <script>
+        let spanNome = document.getElementById("helloworld-nome-usuario-logado");
+        let nome = sessionStorage.getItem("nome");
+        spanNome.innerHTML = "Olá " + nome;
+    </script>
 </body>
 </html>

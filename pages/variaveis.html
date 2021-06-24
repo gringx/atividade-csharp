@@ -5,33 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprenda mais sobre C#</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     
-    <header> <h1>Como aprender: C#</h1></header>
+    <header> <h1>Como aprender: C#
+        <span id="variaveis-nome-usuario-logado">                              </span>
+    </h1></header>
 
     <main>  
         <h2>Variáveis no C#</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p class="txtv">Variáveis no C# 
 
-        <img src="../img/csharpVAR.png" alt="csharpVAR">
+            As variáveis representam locais de armazenamento. Cada variável tem 
+            um tipo que determina quais valores podem ser armazenados nela. 
+            
+            Há dois tipos em C#: tipos de referência e tipos de valor. Variáveis de tipos
+             de valor contêm diretamente seus dados. Variáveis de tipos de referência armazenam
+              referências a seus dados, o último sendo conhecido como objetos. Com tipos de referência,
+               é possível que duas variáveis referenciam o mesmo objeto e as operações em uma variável 
+               afetem o objeto referenciado pela outra variável. Com tipos de valor, cada uma das variáveis
+                tem sua própria cópia dos dados e não é possível que as operações em um afetem o outro 
+                (exceto as variáveis de parâmetro e ref out ). 
+            
+            Um identificador é um nome de variável. Um identificador é uma sequência de caracteres
+             Unicode sem nenhum espaço em branco. Um identificador pode ser uma palavra reservada em C#,
+              se for prefixado por @ . Usar uma palavra reservada como um identificador pode ser útil ao
+               interagir com outras linguagens.  </p>
+              
+
+        <img class="imgvar" src="../img/tipos.png" alt="csharpVAR">
     </main>
     
-    <nav>
+    <nav class="vardec">
         
-        <a href="ide.html">O que é o C#, e quais IDEs utilizar no C#</a>
-        <a href="hello-world.html">Como fazer um "Hello World"</a>
+        <a class="idevolta" href="ide.html">O que é o C#</a>
+        <a class="idenext" href="hello-world.html">Como fazer um "Hello World"</a>
 
     </nav>
 
-    <footer>
-        <p>Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
+    <footer class="footervar">
+        <p class="bar">Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
     </footer>
+    <script>
+        let spanNome = document.getElementById("variaveis-nome-usuario-logado");
+        let nome = sessionStorage.getItem("nome");
+        spanNome.innerHTML = "Olá " + nome;
+    </script>
     
     
 </body>

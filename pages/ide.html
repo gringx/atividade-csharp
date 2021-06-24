@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprenda mais sobre C#</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    
-    <header> <h1>Como aprender: C#</h1></header>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Como aprender: C#
+        <span id="ide-nome-usuario-logado"> </span>
+      </h1>
+    </header>
 
-    <main>  
-        <h2>O que é o C#, e quais IDEs utilizar no C#</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-        <img src="../img/csharpIDE.png" alt="csharpIDE">
+    <main>
+      <h2>O que é o C#, e quais IDEs utilizar no C#</h2>
+      <p class="txtp">
+        O que é C#? C# é uma linguagem de programação de tipagem forte,
+        orientada a objetos e orientada a componentes, desenvolvida pela
+        Microsoft. É baseada no C++ mas inclui muitas influências de
+        outras linguagens de programação, como Object Pascal e, principalmente,
+        Java. Os programas em C# são executados no .NET, um sistema de execução
+        virtual chamado Common Language Runtime (CLR) e um conjunto de
+        bibliotecas de classes.
+      </p>
+      <p class="txtG">
+        O que é Visual Studio? O Visual Studio é um ambiente de desenvolvimento
+        integrado da Microsoft usado para editar, depurar e compilar o código.
+        Nele é possível editar código em C#, Visual Basic, F#, C++, HTML,
+        JavaScript, TypeScript, Python e outros. Ele está disponível para
+        Windows e Mac.  Recursos de produtividade populares: Rabiscos:
+        sublinhados ondulados que alertam você sobre erros ou problemas
+        potenciais no código durante a digitação; Limpeza de código: auxilia na
+        resolução de problemas no código antes da transferência para revisão de
+        código; Refatoração:  inclui operações como renomeação inteligente de
+        variáveis, extração de uma ou mais linhas de código em um novo método,
+        alteração da ordem dos parâmetros de método, entre outros; IntelliSense:
+        conjunto de recursos que exibe informações sobre o código diretamente no
+        editor e, em alguns casos, escreve pequenos trechos de código para você;
+        Live Share: permite editar e depurar de maneira colaborativa com outras
+        pessoas em tempo real, independentemente do tipo de aplicativo ou
+        linguagem de programação. Ir para Definição: o recurso leva você
+        diretamente para o local em que uma função ou um tipo está definido.
+      </p>
     </main>
-
-    <nav>
-        
-        <a href="../index.html">Página Principal</a>
-        <a href="variaveis.html">Variáveis no C#</a>
-
+    <img class="imgide" src="../img/IDE.png.jpg" alt="csharpIDE" />
+    <nav class="pagside">
+      <a class="paganterior" href="../index.html">Página Principal</a>
+      <a class="pagnext" href="variaveis.html">Variáveis no C#</a>
     </nav>
-    
-    <footer>
-        <p>Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
+
+    <footer class="footeride">
+      <p class="bar">Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
     </footer>
-    
-</body>
+
+    <script>
+      let spanNome = document.getElementById("ide-nome-usuario-logado");
+      let nome = sessionStorage.getItem("nome");
+      spanNome.innerHTML = "Olá " + nome;
+    </script>
+  </body>
 </html>
