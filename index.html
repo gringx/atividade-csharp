@@ -1,41 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aprenda mais sobre C#</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    
-    <header> <h1>Como aprender: C#</h1></header>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Como aprender: C#
+        <span id="index-nome-usuario-logado"></span>
+      </h1>
+    </header>
 
-    <nav>
-        <ol>
-        <li><a href="pages/ide.html">Como aprender: C#</a></li>
-        <li><a href="pages/variaveis.html">Variáveis no C#</a></li>
-        <li><a href="pages/hello-world.html">Como fazer um "Hello World"</a></li>
-        <ol>
-    </nav>
+    <span id="index-nave"></span>
 
-    <main>  
-        <form action="">
-                <input placeholder="Qual é o seu nome?" 
-                type="text"
-                id="index-nome">
-                
-                <input value="Cadastrar" 
-                type="submit"
-                id="index-btn-cadastrar">
-        </form>
+    <main id="form1">
+      <form action="" method="get" onsubmit="recuperarNome(event)">
+        <input
+          placeholder="Qual é o seu nome?"
+          type="text"
+          id="index-nome"
+          required
+        />
 
-        <img style="height: 250px;" src="img/csharp.png" alt="csharp">
+        <input value="Cadastrar" type="submit" id="index-btn-cadastrar" />
+      </form>
     </main>
-
-    <footer>
-        <p>Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
+    <div class="img">
+      <img src="img/csharp.png" alt="csharp" />
+    </div>
+    <footer class="footerindex">
+      <p class="bar">Time: Jessica, Bruno Ferreira, Gabriel, Patricia.</p>
     </footer>
-    
-</body>
+
+    <script>
+      let nome = sessionStorage.getItem("nome");
+      let nave = sessionStorage.getItem("nave");
+      let form = document.getElementById("form1");
+      let spanNome = document.getElementById("index-nome-usuario-logado");
+      let spanNave = document.getElementById("index-nave");
+
+      if (nome != undefined && nave != undefined) {
+        spanNome.innerHTML = "Olá " + nome;
+        spanNave.innerHTML = nave;
+        form.innerHTML = "";
+      }
+
+      function recuperarNome(evento) {
+        evento.preventDefault();
+
+        nome = document.getElementById("index-nome").value;
+
+        nave =
+          "" +
+          "<nav>" +
+          "<ol>" +
+          '<li><a href="pages/ide.html">Como aprender: C#</a></li>' +
+          '<li><a href="pages/variaveis.html">Variáveis no C#</a></li>' +
+          '<li><a href="pages/hello-world.html">Como fazer um "Hello World"</a></li>' +
+          "<ol>" +
+          "</nav>";
+
+        spanNome.innerHTML = "Olá " + nome;
+        spanNave.innerHTML = nave;
+
+        form.innerHTML = "";
+
+        sessionStorage.setItem("nome", nome);
+        sessionStorage.setItem("nave", nave);
+      }
+    </script>
+  </body>
 </html>
